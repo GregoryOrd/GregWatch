@@ -1,6 +1,6 @@
 host:gcc
 target:avr-gcc
-executableName:SPI_Test.elf
+executableName:GregWatchSPI.elf
 buildStartingDirectory:src
 
 compilerOption:-DF_CPU=16000000UL
