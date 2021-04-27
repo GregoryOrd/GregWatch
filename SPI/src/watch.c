@@ -29,9 +29,16 @@ void displayLetter(int startingPosition, char letter)
 
 void initStopWatchDisplay()
 {
+   clearScreen();
    setHoursDisplay(0);
    setMinutesDisplay(0);
    displayLetter(COLON_POSITION, ':');
+}
+
+void resetStopWatchDisplay()
+{
+   setHoursDisplay(0);
+   setMinutesDisplay(0);
 }
 
 void setHoursDisplay(int hours)
@@ -58,46 +65,61 @@ char integerToAsciiChar(int integer)
    return zero + integer;
 }
 
+void delayAndResetStopWatchDisplay()
+{
+   _delay_ms(1000);
+   resetStopWatchDisplay();
+}
+
 void delayAndSetMinutes(int minutes)
 {
    _delay_ms(1000);
    setMinutesDisplay(minutes);
 }
 
-void delayandSetHoursAndMinutes(int hours, int minutes)
+void delayAndSetHour(int hours)
 {
    _delay_ms(1000);
-   setMinutesDisplay(minutes);
    setHoursDisplay(hours);
 }
 
 void runThroughMinutes()
 {
-   delayAndSetMinutes(1);
-   delayAndSetMinutes(2);
-   delayAndSetMinutes(10);
-   delayAndSetMinutes(11);
-   delayAndSetMinutes(12);
-   delayAndSetMinutes(20);
-   delayAndSetMinutes(21);
-   delayAndSetMinutes(22);
+   int tens = 0;
+   int ones = 0;
+   int maxMinutes = 3;
+   int minutesPerHour = (maxMinutes + 1);
+   int numDisplays = minutesPerHour * minutesPerHour;
+
+   setMinutesDisplay(0);
+   for (int i = 1; i < numDisplays; i++)
+   {
+      tens = i / minutesPerHour;
+      ones = i % minutesPerHour;
+      int valueToDisplay = (tens * 10) + ones;
+      delayAndSetMinutes(valueToDisplay);
+   }
 }
 
 void runThroughHour(int hour)
 {
-   delayandSetHoursAndMinutes(hour, 0);
+   delayAndSetHour(hour);
    runThroughMinutes();
 }
 
 void runThroughHours()
 {
-   runThroughHour(0);
-   runThroughHour(1);
-   runThroughHour(2);
-   runThroughHour(10);
-   runThroughHour(11);
-   runThroughHour(12);
-   runThroughHour(20);
-   runThroughHour(21);
-   runThroughHour(22);
+   int tens = 0;
+   int ones = 0;
+   int maxHours = 3;
+   int hoursPerDay = (maxHours + 1);
+   int numDisplays = hoursPerDay * hoursPerDay;
+
+   for (int i = 0; i < numDisplays; i++)
+   {
+      tens = i / hoursPerDay;
+      ones = i % hoursPerDay;
+      int valueToDisplay = (tens * 10) + ones;
+      runThroughHour(valueToDisplay);
+   }
 }

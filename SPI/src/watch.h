@@ -8,12 +8,14 @@ extern "C"
 
    void displayLetter(int startingPosition, char letter);
    void initStopWatchDisplay();
+   void resetStopWatchDisplay();
    void setHoursDisplay(int hours);
    void setMinutesDisplay(int minutes);
    char integerToAsciiChar(int integer);
 
+   void delayAndResetStopWatchDisplay();
    void delayAndSetMinutes(int minutes);
-   void delayandSetHoursAndMinutes(int hours, int minutes);
+   void delayAndSetHour(int hours);
    void runThroughMinutes();
    void runThroughHour(int hour);
    void runThroughHours();
