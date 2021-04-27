@@ -5,6 +5,7 @@ buildStartingDirectory:src
 
 compilerOption:-DF_CPU=16000000UL
 compilerOption:-Og
+compilerOption:-fno-common
 
 hostCompilerOption:-D__AVR_ATmega328P__
 
