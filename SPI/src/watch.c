@@ -11,10 +11,8 @@ static const int COLON_POSITION = 38;
 static const int MINUTES_TENS_POSITION = 44;
 static const int MINUTES_ONES_POSITION = 58;
 
-static const int maxHours = 9;
-static const int hoursPerDay = 10;
-static const int maxMinutes = 9;
-static const int minutesPerHour = 10;
+static const int hoursPerDay = 24;
+static const int minutesPerHour = 60;
 
 void displayLetter(int startingPosition, char letter)
 {
@@ -91,13 +89,9 @@ void delayAndSetHour(int hours)
 void runThroughMinutes()
 {
    setMinutesDisplay(0);
-   int numDisplays = minutesPerHour * minutesPerHour;
-   for (int i = 1; i < numDisplays; i++)
+   for (int i = 1; i < minutesPerHour; i++)
    {
-      int tens = i / minutesPerHour;
-      int ones = i % minutesPerHour;
-      int valueToDisplay = (tens * 10) + ones;
-      delayAndSetMinutes(valueToDisplay);
+      delayAndSetMinutes(i % minutesPerHour);
    }
 }
 
@@ -109,12 +103,10 @@ void runThroughHour(int hour)
 
 void runThroughHours()
 {
-   int numDisplays = hoursPerDay * hoursPerDay;
-   for (int i = 0; i < numDisplays; i++)
+   for (int i = 0; i < hoursPerDay; i++)
    {
-      int tens = i / hoursPerDay;
-      int ones = i % hoursPerDay;
-      int valueToDisplay = (tens * 10) + ones;
-      runThroughHour(valueToDisplay);
+      runThroughHour(i % hoursPerDay);
    }
+   delayAndSetHour(hoursPerDay);
+   setMinutesDisplay(0);
 }
