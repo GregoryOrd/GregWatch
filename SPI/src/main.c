@@ -12,7 +12,5 @@ int main(void)
    runThroughHours();
 
    delayAndResetStopWatchDisplay();
-   // setHoursDisplay(77);
-   // setMinutesDisplay(77);
    disableSlave();
 }
