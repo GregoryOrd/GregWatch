@@ -11,10 +11,10 @@ static const int COLON_POSITION = 38;
 static const int MINUTES_TENS_POSITION = 44;
 static const int MINUTES_ONES_POSITION = 58;
 
-static const int maxHours = 4;
-static const int hoursPerDay = 5;
-static const int maxMinutes = 4;
-static const int minutesPerHour = 5;
+static const int maxHours = 6;
+static const int hoursPerDay = 7;
+static const int maxMinutes = 6;
+static const int minutesPerHour = 7;
 
 void displayLetter(int startingPosition, char letter)
 {
