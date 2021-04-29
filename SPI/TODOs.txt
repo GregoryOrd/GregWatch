@@ -1,0 +1,3 @@
+1) Move everything out of the SPI directory and then remove it.
+2) Update the copy.sh and load.sh scripts so that we don't copy the lib directory over to the raspberry pi.
+	- The .so files in here need to be built on the raspberry pi because it is not x86
