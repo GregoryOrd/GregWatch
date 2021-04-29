@@ -1,3 +1,12 @@
 #include <GregTest.h>
 
-void firstTest() { G_ASSERT_INT_EQ(0, 1); }
+#include "../../sim/hardwareSim.h"
+#include "../spi.h"
+
+void firstTest()
+{
+   PORTB = 0b00000000;
+   disableSlave();
+   int expected = 7;  // This should fail. Expected should be 4.
+   G_ASSERT_INT_EQ(expected, PORTB);
+}

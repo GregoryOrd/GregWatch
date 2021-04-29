@@ -1,13 +1,11 @@
 #ifndef SPI_H
 #define SPI_H
 
-//Commented out while working on the build system
-#include <avr/io.h>
 #ifdef TEST
-//#include "../sim/hardwareSim.h"
+#include "../sim/hardwareSim.h"
 #include "../sim/timeSim.h"
 #else
-//#include <avr/io.h>
+#include <avr/io.h>
 #include <util/delay.h>
 #endif
 

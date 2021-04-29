@@ -10,6 +10,12 @@ compilerOption:-fno-common
 
 hostCompilerOption:-D__AVR_ATmega328P__
 hostCompilerOption:-DTEST
+hostCompilerOption:-fPIC
+
+hardwareSimulationLibrary:lib/hardwareSim.so
+hardwareSimulationLibrary:lib/timeSim.so
+hostExcludedFile:src/sim/hardwareSim.c
+hostExcludedFile:src/sim/timeSim.c
 
 targetCompilerOption:-mmcu=atmega328p
 
