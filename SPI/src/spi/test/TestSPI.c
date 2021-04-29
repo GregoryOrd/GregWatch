@@ -3,10 +3,10 @@
 #include "../../sim/hardwareSim.h"
 #include "../spi.h"
 
-void firstTest()
+void willDisableSlave()
 {
    PORTB = 0b00000000;
    disableSlave();
-   int expected = 7;  // This should fail. Expected should be 4.
+   int expected = (1 << SS);
    G_ASSERT_INT_EQ(expected, PORTB);
 }
