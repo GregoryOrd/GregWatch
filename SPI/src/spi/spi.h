@@ -26,10 +26,13 @@ extern "C" {
 void initSpiInterface();
 void enableSlave();
 void disableSlave();
+void setResetPinLow();
+void setResetPinHigh();
 void resetSlave();
 void transmitCommand(unsigned char byte);
 void transmitData(unsigned char byte);
 void transmitByte(unsigned char byte);
+void waitForEndOfTransmissionFlagToGoHigh();
 
 #ifdef __cplusplus
 }

@@ -1,3 +1,11 @@
 1) Move everything out of the SPI directory and then remove it.
 2) Update the copy.sh and load.sh scripts so that we don't copy the lib directory over to the raspberry pi.
 	- The .so files in here need to be built on the raspberry pi because it is not x86
+3) Add randoms to GregCToolkit/This project
+	- Only problem with GregCToolkit is that if we bring it in as a submodule,
+	we have to build the entire thing until GregBuild is updated to add control 
+	for which parts of the toolkit we want to bring into this project.
+	- This may come when GregBuild has better dependency management and can build libraries
+	then link those together instead of just building the single executable with everything
+4) Update TestSPI.c (remove commented out tests) when GregTest supports an 'EXPECT_CALL' like 
+	functionality in the tests
