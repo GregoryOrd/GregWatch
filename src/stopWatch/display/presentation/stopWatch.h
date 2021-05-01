@@ -10,16 +10,16 @@ extern "C"
    void initStopWatchDisplay();
    void resetStopWatchDisplay();
    void disableStopWatch();
-   void setHoursDisplay(int hours);
    void setMinutesDisplay(int minutes);
+   void setSecondsDisplay(int seconds);
    char integerToAsciiChar(int integer);
 
    void delayAndResetStopWatchDisplay();
+   void delayAndSetSeconds(int seconds);
    void delayAndSetMinutes(int minutes);
-   void delayAndSetHour(int hours);
+   void runThroughSeconds();
+   void runThroughMinute(int minutes);
    void runThroughMinutes();
-   void runThroughHour(int hour);
-   void runThroughHours();
 
 #ifdef __cplusplus
 }

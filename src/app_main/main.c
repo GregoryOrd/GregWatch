@@ -4,7 +4,7 @@ int main(void)
 {
    initStopWatch();
 
-   runThroughHours();
+   runThroughMinutes();
 
    disableStopWatch();
 }

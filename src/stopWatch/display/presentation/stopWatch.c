@@ -1,5 +1,6 @@
 #include "stopWatch.h"
 
+#include "../domain/timeDefs.h"
 #include "../screenApi/communicationProtocol/spi.h"
 #include "../screenApi/deviceController/nokia5110Controller.h"
 
@@ -9,14 +10,11 @@
 #include <util/delay.h>
 #endif
 
-static const int HOURS_TENS_POSITION = 10;
-static const int HOURS_ONES_POSITION = 24;
+static const int MINUTES_TENS_POSITION = 10;
+static const int MINUTES_ONES_POSITION = 24;
 static const int COLON_POSITION = 38;
-static const int MINUTES_TENS_POSITION = 44;
-static const int MINUTES_ONES_POSITION = 58;
-
-static const int hoursPerDay = 24;
-static const int minutesPerHour = 16;
+static const int SECONDS_TENS_POSITION = 44;
+static const int SECONDS_ONES_POSITION = 58;
 
 void initStopWatch()
 {
@@ -29,8 +27,8 @@ void initStopWatch()
 void initStopWatchDisplay()
 {
    clearScreen();
-   setHoursDisplay(0);
    setMinutesDisplay(0);
+   setSecondsDisplay(0);
    displayLetter(COLON_POSITION, ':');
 }
 
@@ -42,17 +40,8 @@ void disableStopWatch()
 
 void resetStopWatchDisplay()
 {
-   setHoursDisplay(0);
    setMinutesDisplay(0);
-}
-
-void setHoursDisplay(int hours)
-{
-   int tensPosition = hours / 10;
-   int onesPosition = hours % 10;
-
-   displayLetter(HOURS_TENS_POSITION, integerToAsciiChar(tensPosition));
-   displayLetter(HOURS_ONES_POSITION, integerToAsciiChar(onesPosition));
+   setSecondsDisplay(0);
 }
 
 void setMinutesDisplay(int minutes)
@@ -62,6 +51,15 @@ void setMinutesDisplay(int minutes)
 
    displayLetter(MINUTES_TENS_POSITION, integerToAsciiChar(tensPosition));
    displayLetter(MINUTES_ONES_POSITION, integerToAsciiChar(onesPosition));
+}
+
+void setSecondsDisplay(int minutes)
+{
+   int tensPosition = minutes / 10;
+   int onesPosition = minutes % 10;
+
+   displayLetter(SECONDS_TENS_POSITION, integerToAsciiChar(tensPosition));
+   displayLetter(SECONDS_ONES_POSITION, integerToAsciiChar(onesPosition));
 }
 
 char integerToAsciiChar(int integer)
@@ -76,39 +74,39 @@ void delayAndResetStopWatchDisplay()
    resetStopWatchDisplay();
 }
 
+void delayAndSetSeconds(int minutes)
+{
+   _delay_ms(1000);
+   setSecondsDisplay(minutes);
+}
+
 void delayAndSetMinutes(int minutes)
 {
    _delay_ms(1000);
    setMinutesDisplay(minutes);
 }
 
-void delayAndSetHour(int hours)
+void runThroughSeconds()
 {
-   _delay_ms(1000);
-   setHoursDisplay(hours);
+   setSecondsDisplay(0);
+   for (int i = 1; i < secondsPerMinute; i++)
+   {
+      delayAndSetSeconds(i % secondsPerMinute);
+   }
+}
+
+void runThroughMinute(int minute)
+{
+   delayAndSetMinutes(minute);
+   runThroughSeconds();
 }
 
 void runThroughMinutes()
 {
-   setMinutesDisplay(0);
-   for (int i = 1; i < minutesPerHour; i++)
+   for (int i = 0; i < minutesPerHour; i++)
    {
-      delayAndSetMinutes(i % minutesPerHour);
+      runThroughMinute(i % minutesPerHour);
    }
-}
-
-void runThroughHour(int hour)
-{
-   delayAndSetHour(hour);
-   runThroughMinutes();
-}
-
-void runThroughHours()
-{
-   for (int i = 0; i < hoursPerDay; i++)
-   {
-      runThroughHour(i % hoursPerDay);
-   }
-   delayAndSetHour(hoursPerDay);
-   setMinutesDisplay(0);
+   delayAndSetMinutes(minutesPerHour);
+   setSecondsDisplay(0);
 }
