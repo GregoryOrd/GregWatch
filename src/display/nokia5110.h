@@ -1,6 +1,8 @@
 #ifndef NOKIA_5110_H
 #define NOKIA_5110_H
 
+#include <stdbool.h>
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -8,7 +10,9 @@ extern "C"
 
    void initNokia5110();
    void clearScreen();
-   void setScreenXY(unsigned char x, unsigned char y);
+   bool setScreenXY(unsigned char x, unsigned char y);
+   bool validXPosition(unsigned char x);
+   bool validYPosition(unsigned char y);
 
 #ifdef __cplusplus
 }

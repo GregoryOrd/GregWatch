@@ -21,8 +21,17 @@ void clearScreen()
    }
 }
 
-void setScreenXY(unsigned char x, unsigned char y)
+bool setScreenXY(unsigned char x, unsigned char y)
 {
-   transmitCommand(0x80 | x);  // column (0-83)
-   transmitCommand(0x40 | y);  // row (0-5)
+   if (validXPosition(x) && validYPosition(y))
+   {
+      transmitCommand(0x80 | x);  // column (0-83)
+      transmitCommand(0x40 | y);  // row (0-5)
+      return true;
+   }
+   return false;
 }
+
+bool validXPosition(unsigned char x) { return x <= 83; }
+
+bool validYPosition(unsigned char y) { return y <= 5; }
