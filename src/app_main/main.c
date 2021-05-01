@@ -1,4 +1,5 @@
 #include "../display/watch.h"
+#include "../spi/spi.h"
 
 int main(void)
 {

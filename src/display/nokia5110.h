@@ -1,8 +1,6 @@
 #ifndef NOKIA_5110_H
 #define NOKIA_5110_H
 
-#include "../spi/spi.h"
-
 #ifdef __cplusplus
 extern "C"
 {

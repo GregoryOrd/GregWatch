@@ -1,5 +1,7 @@
 #include "watch.h"
 
+#include "../spi/spi.h"
+
 #ifdef TEST
 #include "../sim/timeSim.h"
 #else

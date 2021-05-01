@@ -1,5 +1,7 @@
 #include "nokia5110.h"
 
+#include "../spi/spi.h"
+
 void initNokia5110()
 {
    resetSlave();
