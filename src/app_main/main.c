@@ -1,15 +1,10 @@
-#include "../display/watch.h"
-#include "../spi/spi.h"
+#include "../stopWatch/display/presentation/stopWatch.h"
 
 int main(void)
 {
-   initSpiInterface();
-   enableSlave();
-   initNokia5110();
+   initStopWatch();
 
-   initStopWatchDisplay();
    runThroughHours();
 
-   delayAndResetStopWatchDisplay();
-   disableSlave();
+   disableStopWatch();
 }

@@ -1,17 +1,15 @@
 #ifndef WATCH_H
 #define WATCH
 
-#include "myletters.h"
-#include "nokia5110.h"
-
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-   void displayLetter(int startingPosition, char letter);
+   void initStopWatch();
    void initStopWatchDisplay();
    void resetStopWatchDisplay();
+   void disableStopWatch();
    void setHoursDisplay(int hours);
    void setMinutesDisplay(int minutes);
    char integerToAsciiChar(int integer);

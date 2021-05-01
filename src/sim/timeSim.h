@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-//This doesn't delay for the specific time. Just a stub function.
+//This does not delay for the specific time. Just a stub function.
 void _delay_ms(int timeToDelay);
 
 #ifdef __cplusplus

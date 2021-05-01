@@ -1,5 +1,5 @@
-#ifndef MY_LETTERS_H
-#define MY_LETTERS_H
+#ifndef LETTERS_16X12_H
+#define LETTERS_16X12_H
 
 typedef struct letterData
 {

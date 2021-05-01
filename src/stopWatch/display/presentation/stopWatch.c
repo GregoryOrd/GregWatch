@@ -1,9 +1,10 @@
-#include "watch.h"
+#include "stopWatch.h"
 
-#include "../spi/spi.h"
+#include "../screenApi/communicationProtocol/spi.h"
+#include "../screenApi/deviceController/nokia5110Controller.h"
 
 #ifdef TEST
-#include "../sim/timeSim.h"
+#include "../../../sim/timeSim.h"
 #else
 #include <util/delay.h>
 #endif
@@ -15,22 +16,14 @@ static const int MINUTES_TENS_POSITION = 44;
 static const int MINUTES_ONES_POSITION = 58;
 
 static const int hoursPerDay = 24;
-static const int minutesPerHour = 60;
+static const int minutesPerHour = 16;
 
-void displayLetter(int startingPosition, char letter)
+void initStopWatch()
 {
-   const letterData data = getLetterData(letter);
-   setScreenXY(startingPosition, 2);
-   for (int index = 0; index < data.numBytes; index++)
-   {
-      transmitData(data.upperBank[index]);
-   }
-
-   setScreenXY(startingPosition, 3);
-   for (int index = 0; index < data.numBytes; index++)
-   {
-      transmitData(data.lowerBank[index]);
-   }
+   initSpiInterface();
+   enableSlave();
+   initNokia5110();
+   initStopWatchDisplay();
 }
 
 void initStopWatchDisplay()
@@ -39,6 +32,12 @@ void initStopWatchDisplay()
    setHoursDisplay(0);
    setMinutesDisplay(0);
    displayLetter(COLON_POSITION, ':');
+}
+
+void disableStopWatch()
+{
+   delayAndResetStopWatchDisplay();
+   disableSlave();
 }
 
 void resetStopWatchDisplay()

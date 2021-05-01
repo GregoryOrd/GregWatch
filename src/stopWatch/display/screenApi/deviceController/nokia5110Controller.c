@@ -1,6 +1,7 @@
-#include "nokia5110.h"
+#include "nokia5110Controller.h"
 
-#include "../spi/spi.h"
+#include "../communicationProtocol/spi.h"
+#include "letters16x12.h"
 
 void initNokia5110()
 {
@@ -35,3 +36,19 @@ bool setScreenXY(unsigned char x, unsigned char y)
 bool validXPosition(unsigned char x) { return x <= 83; }
 
 bool validYPosition(unsigned char y) { return y <= 5; }
+
+void displayLetter(int startingPosition, char letter)
+{
+   const letterData data = getLetterData(letter);
+   setScreenXY(startingPosition, 2);
+   for (int index = 0; index < data.numBytes; index++)
+   {
+      transmitData(data.upperBank[index]);
+   }
+
+   setScreenXY(startingPosition, 3);
+   for (int index = 0; index < data.numBytes; index++)
+   {
+      transmitData(data.lowerBank[index]);
+   }
+}

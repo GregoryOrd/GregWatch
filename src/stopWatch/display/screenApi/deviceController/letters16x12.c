@@ -1,4 +1,4 @@
-#include "myletters.h"
+#include "letters16x12.h"
 
 #define NUMBER_WIDTH 12
 #define COLON_WIDTH  4

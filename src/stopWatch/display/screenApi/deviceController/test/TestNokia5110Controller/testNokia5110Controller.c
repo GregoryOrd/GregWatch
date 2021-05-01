@@ -1,6 +1,6 @@
 #include <GregTest.h>
 
-#include "../nokia5110.h"
+#include "../../nokia5110Controller.h"
 
 #define X_POS_BOUNDARY 83
 #define VALID_X        23
