@@ -105,22 +105,20 @@ void willSetSPIDataRegisterWhenTransmittingData()
    G_ASSERT_INT_EQ(anonymousData, SPDR);
 }
 
-// These tests are waiting for expect call support from GregTest
-/*
 void willWaitForEndOfTransmission()
 {
    unsigned char anonymousData = 0x36;
 
-   EXPECT_CALL(waitForEndOfTransmissionFlagToGoHigh())
+   G_EXPECT_CALL(waitForEndOfTransmissionFlagToGoHigh);
 
    transmitByte(anonymousData);
 }
 
 void willResetSlave()
 {
-   InSequence;
-   EXPECT_CALL(setResetPinLow());
-   EXPECT_CALL(_delay_ms(100));
-   EXPECT_CALL(setResetPinHigh());
+   G_EXPECT_CALL(setResetPinLow);
+   G_EXPECT_CALL(_delay_ms);
+   G_EXPECT_CALL(setResetPinHigh);
+
+   resetSlave();
 }
-*/
