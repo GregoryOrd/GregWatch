@@ -10,12 +10,6 @@
 #include <util/delay.h>
 #endif
 
-static const int MINUTES_TENS_POSITION = 10;
-static const int MINUTES_ONES_POSITION = 24;
-static const int COLON_POSITION = 38;
-static const int SECONDS_TENS_POSITION = 44;
-static const int SECONDS_ONES_POSITION = 58;
-
 void initStopWatch()
 {
    initSpiInterface();
@@ -74,10 +68,10 @@ void delayAndResetStopWatchDisplay()
    resetStopWatchDisplay();
 }
 
-void delayAndSetSeconds(int minutes)
+void delayAndSetSeconds(int seconds)
 {
    _delay_ms(1000);
-   setSecondsDisplay(minutes);
+   setSecondsDisplay(seconds);
 }
 
 void delayAndSetMinutes(int minutes)
@@ -89,9 +83,9 @@ void delayAndSetMinutes(int minutes)
 void runThroughSeconds()
 {
    setSecondsDisplay(0);
-   for (int i = 1; i < secondsPerMinute; i++)
+   for (int i = 1; i < 60; i++)
    {
-      delayAndSetSeconds(i % secondsPerMinute);
+      delayAndSetSeconds(i);
    }
 }
 
@@ -105,7 +99,7 @@ void runThroughMinutes()
 {
    for (int i = 0; i < minutesPerHour; i++)
    {
-      runThroughMinute(i % minutesPerHour);
+      runThroughMinute(i);
    }
    delayAndSetMinutes(minutesPerHour);
    setSecondsDisplay(0);

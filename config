@@ -24,3 +24,4 @@ targetLinkerOption:-mmcu=atmega328p
 
 targetExcludedFile:src/sim/hardwareSim.c
 targetExcludedFile:src/sim/timeSim.c
+targetExcludedFile:src/stopWatch/display/presentation/test/TestStopWatch/stopWatchTestHelper.c
