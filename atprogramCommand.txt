@@ -1,0 +1,1 @@
+atprogram.exe -t atmelice -i ISP -d atmega328p program -c -fl -f C:/GregWatch/dist/GregWatchSPI.elf

@@ -19,13 +19,9 @@ extern "C"
    void setMinutesDisplay(int minutes);
    void setSecondsDisplay(int seconds);
    char integerToAsciiChar(int integer);
-
-   void delayAndResetStopWatchDisplay();
-   void delayAndSetSeconds(int seconds);
-   void delayAndSetMinutes(int minutes);
-   void runThroughSeconds();
-   void runThroughMinute(int minutes);
    void runThroughMinutes();
+   void incrementStopWatchOneSecondAndResetTimerFlag();
+   void updateDisplayWithCurrentState();
 
 #ifdef __cplusplus
 }

@@ -1,17 +1,14 @@
 #include "stopWatch.h"
 
 #include "../domain/timeDefs.h"
+#include "../domain/timeState.h"
 #include "../screenApi/communicationProtocol/spi.h"
 #include "../screenApi/deviceController/nokia5110Controller.h"
-
-#ifdef TEST
-#include "../../../sim/timeSim.h"
-#else
-#include <util/delay.h>
-#endif
+#include "timer.h"
 
 void initStopWatch()
 {
+   setupTimer();
    initSpiInterface();
    enableSlave();
    initNokia5110();
@@ -28,7 +25,7 @@ void initStopWatchDisplay()
 
 void disableStopWatch()
 {
-   delayAndResetStopWatchDisplay();
+   resetStopWatchDisplay();
    disableSlave();
 }
 
@@ -62,45 +59,26 @@ char integerToAsciiChar(int integer)
    return zero + integer;
 }
 
-void delayAndResetStopWatchDisplay()
+void incrementStopWatchOneSecondAndResetTimerFlag()
 {
-   _delay_ms(1000);
-   resetStopWatchDisplay();
+   incrementTimeStateByOneSecond();
+   updateDisplayWithCurrentState();
+   resetTimerFlag();
 }
 
-void delayAndSetSeconds(int seconds)
+void updateDisplayWithCurrentState()
 {
-   _delay_ms(1000);
-   setSecondsDisplay(seconds);
-}
-
-void delayAndSetMinutes(int minutes)
-{
-   _delay_ms(1000);
-   setMinutesDisplay(minutes);
-}
-
-void runThroughSeconds()
-{
-   setSecondsDisplay(0);
-   for (int i = 1; i < 60; i++)
-   {
-      delayAndSetSeconds(i);
-   }
-}
-
-void runThroughMinute(int minute)
-{
-   delayAndSetMinutes(minute);
-   runThroughSeconds();
+   setMinutesDisplay(minutes());
+   setSecondsDisplay(seconds());
 }
 
 void runThroughMinutes()
 {
-   for (int i = 0; i < minutesPerHour; i++)
+   while (1)
    {
-      runThroughMinute(i);
+      if (oneSecondElapsed())
+      {
+         incrementStopWatchOneSecondAndResetTimerFlag();
+      }
    }
-   delayAndSetMinutes(minutesPerHour);
-   setSecondsDisplay(0);
 }

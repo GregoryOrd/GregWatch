@@ -1,12 +1,15 @@
 #include <GregTest.h>
 
+#include "../../../domain/timeState.h"
 #include "../../../screenApi/communicationProtocol/spi.h"
 #include "../../../screenApi/deviceController/nokia5110Controller.h"
 #include "../../stopWatch.h"
+#include "../../timer.h"
 #include "stopWatchTestHelper.h"
 
 void willInitStopWatch()
 {
+   G_EXPECT_CALL(setupTimer);
    G_EXPECT_CALL(initSpiInterface);
    G_EXPECT_CALL(enableSlave);
    G_EXPECT_CALL(initNokia5110);
@@ -35,7 +38,7 @@ void willResetStopWatchDisplay()
 
 void willDisableStopWatch()
 {
-   G_EXPECT_CALL(delayAndResetStopWatchDisplay);
+   G_EXPECT_CALL(resetStopWatchDisplay);
    G_EXPECT_CALL(disableSlave);
 
    disableStopWatch();
@@ -76,51 +79,25 @@ void willConvertIntegerToAsciiChar()
    }
 }
 
-void willDelayAndResetStopWatchDisplay()
+void willIncrementTimeStateAndUpdateDisplay()
 {
-   G_EXPECT_CALL(_delay_ms);  // 1000
-   G_EXPECT_CALL(resetStopWatchDisplay);
+   G_EXPECT_CALL(incrementTimeStateByOneSecond);
+   G_EXPECT_CALL(updateDisplayWithCurrentState);
 
-   delayAndResetStopWatchDisplay();
+   incrementStopWatchOneSecondAndResetTimerFlag();
 }
 
-void willDelayAndSetSeconds()
+void willQueryCurrentStateWhenUpdatingDisplay()
 {
-   int seconds = anonymousInteger();
+   G_EXPECT_CALL(minutes);
+   G_EXPECT_CALL(seconds);
 
-   G_EXPECT_CALL(_delay_ms);          // 1000
-   G_EXPECT_CALL(setSecondsDisplay);  // seconds
-
-   delayAndSetSeconds(seconds);
+   updateDisplayWithCurrentState();
 }
 
-void willDelayAndSetMinutes()
+void willResetTimerFlag()
 {
-   int minutes = anonymousInteger();
+   G_EXPECT_CALL(resetTimerFlag);
 
-   G_EXPECT_CALL(_delay_ms);          // 1000
-   G_EXPECT_CALL(setMinutesDisplay);  // seconds
-
-   delayAndSetMinutes(minutes);
-}
-
-void willRunThroughSeconds()
-{
-   G_EXPECT_CALL(setSecondsDisplay);  // 0
-   for (int i = 1; i < 60; i++)
-   {
-      G_EXPECT_CALL(delayAndSetSeconds);  // i
-   }
-
-   runThroughSeconds();
-}
-
-void willRunThroughASingleMinute()
-{
-   int minute = anonymousInteger();
-
-   G_EXPECT_CALL(delayAndSetMinutes);  // minute
-   G_EXPECT_CALL(runThroughSeconds);
-
-   runThroughMinute(minute);
+   incrementStopWatchOneSecondAndResetTimerFlag();
 }
