@@ -6,6 +6,8 @@
 #include "../screenApi/deviceController/nokia5110Controller.h"
 #include "timer.h"
 
+static bool stopWatchDoneFlag = false;
+
 void initStopWatch()
 {
    setupTimer();
@@ -74,11 +76,15 @@ void updateDisplayWithCurrentState()
 
 void runThroughMinutes()
 {
-   while (1)
+   while (!stopWatchDoneFlag)
    {
       if (oneSecondElapsed())
       {
          incrementStopWatchOneSecondAndResetTimerFlag();
+      }
+      if (minutes() >= 60)
+      {
+         stopWatchDoneFlag = true;
       }
    }
 }
