@@ -1,10 +1,10 @@
 #include "stopWatch.h"
 
-#include "../../timer/timer.h"
-#include "../../timer/timeDefs.h"
-#include "../../timer/timeState.h"
-#include "../screenApi/communicationProtocol/spi.h"
-#include "../screenApi/deviceController/nokia5110Controller.h"
+#include "../display/screenApi/communicationProtocol/spi.h"
+#include "../display/screenApi/deviceController/nokia5110Controller.h"
+#include "../timer/timeDefs.h"
+#include "../timer/timeState.h"
+#include "../timer/timer.h"
 
 static bool stopWatchDoneFlag = false;
 

@@ -1,9 +1,9 @@
 #include <GregTest.h>
 
-#include "../../../../timer/timeState.h"
-#include "../../../../timer/timer.h"
-#include "../../../screenApi/communicationProtocol/spi.h"
-#include "../../../screenApi/deviceController/nokia5110Controller.h"
+#include "../../../display/screenApi/communicationProtocol/spi.h"
+#include "../../../display/screenApi/deviceController/nokia5110Controller.h"
+#include "../../../timer/timeState.h"
+#include "../../../timer/timer.h"
 #include "../../stopWatch.h"
 #include "stopWatchTestHelper.h"
 
