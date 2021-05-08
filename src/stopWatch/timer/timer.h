@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #ifdef TEST
-#include "../../../sim/hardwareSim.h"
+#include "../../sim/hardwareSim.h"
 #else
 #include <avr/interrupt.h>
 #include <avr/io.h>

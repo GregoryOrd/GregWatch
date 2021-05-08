@@ -1,6 +1,6 @@
 #include <GregTest.h>
 
-#include "../timeDefs.h"
+#include "../../timeDefs.h"
 
 void usesCorrectSecondsPerMinute() { G_ASSERT_UNSIGNED_INT_EQ(60, secondsPerMinute); }
 

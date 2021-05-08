@@ -1,6 +1,6 @@
 #include <GregTest.h>
 
-#include "../../../../../sim/hardwareSim.h"
+#include "../../../../sim/hardwareSim.h"
 #include "../../timer.h"
 
 void willSetupTimer()

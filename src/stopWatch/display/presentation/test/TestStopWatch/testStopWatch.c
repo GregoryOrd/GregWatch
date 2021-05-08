@@ -1,10 +1,10 @@
 #include <GregTest.h>
 
-#include "../../../domain/timeState.h"
+#include "../../../../timer/timeState.h"
+#include "../../../../timer/timer.h"
 #include "../../../screenApi/communicationProtocol/spi.h"
 #include "../../../screenApi/deviceController/nokia5110Controller.h"
 #include "../../stopWatch.h"
-#include "../../timer.h"
 #include "stopWatchTestHelper.h"
 
 void willInitStopWatch()
