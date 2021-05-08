@@ -7,8 +7,8 @@ testFrameworkLibrary:/usr/lib/GregTest.so
 compilerOption:-DF_CPU=16000000UL
 compilerOption:-Og
 compilerOption:-fno-common
-hostCompilerOption:-finstrument-functions
 
+hostCompilerOption:-finstrument-functions
 hostCompilerOption:-D__AVR_ATmega328P__
 hostCompilerOption:-DTEST
 hostCompilerOption:-fPIC

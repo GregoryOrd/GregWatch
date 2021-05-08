@@ -39,6 +39,10 @@ extern uint8_t TIMSK0;
 extern "C" {
 #endif
 
+#  define ISR(vector, ...)            \
+    void vector (void)  __VA_ARGS__; \
+    void vector (void)
+
 void resetHardwareSimPortB();
 void resetHardwareSimDDRB();
 void sei();
