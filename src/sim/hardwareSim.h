@@ -25,8 +25,19 @@
 #define PORTB6 6
 #define PORTB7 7
 
+#define PORTC0 0
+#define PORTC1 1
+#define PORTC2 2
+#define PORTC3 3
+#define PORTC4 4
+#define PORTC5 5
+#define PORTC6 6
+#define PORTC7 7
+
 extern uint8_t DDRB;
 extern uint8_t PORTB;
+extern uint8_t DDRC;
+extern uint8_t PORTC;
 extern uint8_t SPCR;
 extern uint8_t SPDR;
 extern uint8_t SPSR;

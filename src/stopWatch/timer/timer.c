@@ -2,11 +2,19 @@
 
 #include <stdint.h>
 
+#include "timeState.h"
+
 #define DELAY_INTERRUPTS 100  // 1s
 
 volatile uint8_t flag = 0;
 
-ISR(TIMER0_COMPA_vect) { flag++; }
+ISR(TIMER0_COMPA_vect)
+{
+   if (!paused())
+   {
+      flag++;
+   }
+}
 
 void resetTimerFlag() { flag = 0; }
 

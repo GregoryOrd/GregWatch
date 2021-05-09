@@ -1,5 +1,6 @@
 #include "stopWatch.h"
 
+#include "../buttons/buttons.h"
 #include "../display/communicationProtocol/spi.h"
 #include "../display/deviceController/nokia5110Controller.h"
 #include "../timer/timeDefs.h"
@@ -10,6 +11,7 @@ static bool stopWatchDoneFlag = false;
 
 void initStopWatch()
 {
+   setupPortForButtons();
    setupTimer();
    initSpiInterface();
    enableSlave();
@@ -85,6 +87,10 @@ void runThroughMinutes()
       if (minutes() >= 60)
       {
          stopWatchDoneFlag = true;
+      }
+      if (buttonPressed(BUTTON_ONE))
+      {
+         togglePaused(true);
       }
    }
 }

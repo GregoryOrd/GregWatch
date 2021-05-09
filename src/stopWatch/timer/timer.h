@@ -11,12 +11,13 @@
 #endif
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-void resetTimerFlag();
-void setupTimer();
-bool oneSecondElapsed();
+   void resetTimerFlag();
+   void setupTimer();
+   bool oneSecondElapsed();
 
 #ifdef __cplusplus
 }
