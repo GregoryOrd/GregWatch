@@ -13,7 +13,6 @@ extern "C"
    uint8_t seconds();
    uint8_t minutes();
    bool paused();
-   void setPaused(bool p);
    void togglePaused();
 
 #ifdef __cplusplus

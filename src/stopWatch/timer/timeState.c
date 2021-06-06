@@ -20,6 +20,4 @@ uint8_t minutes() { return minutes_; }
 
 bool paused() { return paused_; }
 
-void setPaused(bool p) { paused_ = p; }
-
 void togglePaused() { paused_ = !paused_; }

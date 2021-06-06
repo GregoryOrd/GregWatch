@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+//////////////////////////////////////////////////////////
+//                  Constants Section                   //
+//////////////////////////////////////////////////////////
 #define SPE  6
 #define MSTR 4
 
@@ -34,6 +37,13 @@
 #define PORTC6 6
 #define PORTC7 7
 
+#define INT0  0
+#define ISC01 1
+#define ISC00 0
+
+//////////////////////////////////////////////////////////
+//                  Registers Section                   //
+//////////////////////////////////////////////////////////
 extern uint8_t DDRB;
 extern uint8_t PORTB;
 extern uint8_t DDRC;
@@ -45,18 +55,22 @@ extern uint8_t TCCR0A;
 extern uint8_t TCCR0B;
 extern uint8_t OCR0A;
 extern uint8_t TIMSK0;
+extern uint8_t EICRA;
+extern uint8_t EIMSK;
 
+//////////////////////////////////////////////////////////
+//                  Interrupts Section                   //
+//////////////////////////////////////////////////////////
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-#  define ISR(vector, ...)            \
-    void vector (void)  __VA_ARGS__; \
-    void vector (void)
+#define ISR(vector, ...)          \
+   void vector(void) __VA_ARGS__; \
+   void vector(void)
 
-void resetHardwareSimPortB();
-void resetHardwareSimDDRB();
-void sei();
+   void sei();
 
 #ifdef __cplusplus
 }

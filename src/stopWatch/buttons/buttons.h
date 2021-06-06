@@ -8,21 +8,21 @@
 #include "../../sim/hardwareSim.h"
 #else
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #endif
 
-#define BUTTON_PORT_DDR         DDRC
-#define BUTTON_INPUT_REGISTER   PINC
-#define BUTTON_PORT             PORTC
-#define BUTTON_ONE              PORTC0
+#define PAUSE_BUTTON_INTERRUPT_VECTOR               INT0_vect
+#define PAUSE_BUTTON_INTERRUPT_CONTROL_REGISTER     EICRA
+#define PAUSE_BUTTON_INTERRUPT_MASK_REGISTER        EIMSK
+#define PAUSE_BUTTON_INTERRUPT_ENABLE               INT0
+#define PAUSE_BUTTON_INTERRUPT_SENSE_CONTROL_1      ISC01
+#define PAUSE_BUTTON_INTERRUPT_SENSE_CONTROL_0      ISC00
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void setupPortForButtons();
-uint8_t readButton(uint8_t buttonPinNumber);
-bool buttonPressed(uint8_t buttonPinNumber);
-bool buttonReleased(uint8_t buttonPinNumber);
+void setupPauseButtonInterrupt();
 
 #ifdef __cplusplus
 }

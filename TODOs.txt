@@ -15,3 +15,5 @@
 	then link those together instead of just building the single executable with everything
 4) Update TestSPI.c (remove commented out tests) when GregTest supports an 'EXPECT_CALL' like 
 	functionality in the tests
+5) Rename the presentation folder to "applicationLogic"
+	- Move the timerState module into the "applicationLogic" directory

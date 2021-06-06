@@ -11,7 +11,7 @@ static bool stopWatchDoneFlag = false;
 
 void initStopWatch()
 {
-   setupPortForButtons();
+   setupPauseButtonInterrupt();
    setupTimer();
    initSpiInterface();
    enableSlave();
@@ -87,10 +87,6 @@ void runThroughMinutes()
       if (minutes() >= 60)
       {
          stopWatchDoneFlag = true;
-      }
-      if (buttonPressed(BUTTON_ONE))
-      {
-         togglePaused(true);
       }
    }
 }
