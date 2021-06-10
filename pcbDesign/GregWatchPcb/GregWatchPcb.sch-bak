@@ -1,0 +1,278 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATmega:ATmega328P-AU U?
+U 1 1 60C0C793
+P 4800 3850
+F 0 "U?" H 4800 2261 50  0000 C CNN
+F 1 "ATmega328P-AU" H 4800 2170 50  0000 C CNN
+F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 4800 3850 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 4800 3850 50  0001 C CNN
+	1    4800 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60C0E2CA
+P 6650 3600
+F 0 "C?" V 6398 3600 50  0000 C CNN
+F 1 "C" V 6489 3600 50  0000 C CNN
+F 2 "" H 6688 3450 50  0001 C CNN
+F 3 "~" H 6650 3600 50  0001 C CNN
+	1    6650 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 60C0E9E7
+P 6650 3000
+F 0 "C?" V 6398 3000 50  0000 C CNN
+F 1 "C" V 6489 3000 50  0000 C CNN
+F 2 "" H 6688 2850 50  0001 C CNN
+F 3 "~" H 6650 3000 50  0001 C CNN
+	1    6650 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 3000 6150 3000
+Wire Wire Line
+	6500 3600 6150 3600
+Wire Wire Line
+	6150 3000 5950 3000
+Wire Wire Line
+	5950 3000 5950 3250
+Connection ~ 6150 3000
+Wire Wire Line
+	6150 3600 5950 3600
+Wire Wire Line
+	5950 3600 5950 3350
+Connection ~ 6150 3600
+Wire Wire Line
+	6150 3450 6150 3600
+Wire Wire Line
+	6150 3150 6150 3000
+$Comp
+L Device:Crystal Y?
+U 1 1 60C0CCC5
+P 6150 3300
+F 0 "Y?" V 6104 3431 50  0000 L CNN
+F 1 "Crystal" V 6195 3431 50  0000 L CNN
+F 2 "" H 6150 3300 50  0001 C CNN
+F 3 "~" H 6150 3300 50  0001 C CNN
+	1    6150 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5400 3350 5950 3350
+Connection ~ 5850 2300
+Wire Wire Line
+	5400 2950 5600 2950
+Wire Wire Line
+	5400 2850 5750 2850
+Wire Wire Line
+	5400 2750 5650 2750
+Wire Wire Line
+	5400 2650 5700 2650
+Wire Wire Line
+	5400 3150 5550 3150
+Wire Wire Line
+	5400 4950 5500 4950
+Text Notes 5850 5050 0    50   ~ 0
+Status LED Line\n
+Text Notes 5200 800  0    50   ~ 0
+SPI Lines to the Screen\n
+$Comp
+L power:GND #PWR?
+U 1 1 60C57A4A
+P 7450 3000
+F 0 "#PWR?" H 7450 2750 50  0001 C CNN
+F 1 "GND" V 7455 2872 50  0000 R CNN
+F 2 "" H 7450 3000 50  0001 C CNN
+F 3 "" H 7450 3000 50  0001 C CNN
+	1    7450 3000
+	0    -1   -1   0   
+$EndComp
+Text Notes 8050 4750 0    50   ~ 0
+Button Input Lines\n
+Wire Bus Line
+	8000 4850 8000 4550
+Wire Wire Line
+	5400 4550 8000 4550
+Wire Wire Line
+	5400 4650 8000 4650
+Wire Wire Line
+	5400 4750 8000 4750
+Wire Wire Line
+	5400 4850 8000 4850
+Wire Wire Line
+	5400 5050 7600 5050
+Wire Wire Line
+	7250 3600 7250 3000
+Wire Wire Line
+	6800 3600 7250 3600
+Wire Wire Line
+	7250 3000 6950 3000
+Wire Wire Line
+	5500 1000 5500 4950
+Wire Wire Line
+	5550 1000 5550 1800
+Wire Wire Line
+	5600 1000 5600 1900
+Wire Wire Line
+	5650 1000 5650 2750
+Wire Wire Line
+	5700 1000 5700 2650
+Wire Wire Line
+	5750 1000 5750 2850
+Wire Wire Line
+	5850 2300 4900 2300
+Wire Wire Line
+	4900 2300 4900 2350
+Wire Wire Line
+	4900 2300 4800 2300
+Wire Wire Line
+	4800 2300 4800 2350
+Connection ~ 4900 2300
+Wire Wire Line
+	5600 1900 6050 1900
+Connection ~ 5600 1900
+Wire Wire Line
+	5600 1900 5600 2950
+Wire Wire Line
+	6050 1800 5550 1800
+Connection ~ 5550 1800
+Wire Wire Line
+	5550 1800 5550 3150
+Wire Wire Line
+	6050 1700 5850 1700
+Connection ~ 5850 1700
+Wire Wire Line
+	5850 1700 5850 2300
+$Comp
+L Device:CP C?
+U 1 1 60C1D1DF
+P 6950 2650
+F 0 "C?" H 7068 2696 50  0000 L CNN
+F 1 "CP" H 7068 2605 50  0000 L CNN
+F 2 "" H 6988 2500 50  0001 C CNN
+F 3 "~" H 6950 2650 50  0001 C CNN
+	1    6950 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 1000 5850 1700
+Wire Wire Line
+	6550 1400 6550 1350
+$Comp
+L power:+5V #PWR?
+U 1 1 60C5C274
+P 6950 2350
+F 0 "#PWR?" H 6950 2200 50  0001 C CNN
+F 1 "+5V" H 6965 2523 50  0000 C CNN
+F 2 "" H 6950 2350 50  0001 C CNN
+F 3 "" H 6950 2350 50  0001 C CNN
+	1    6950 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 1350 7250 1350
+$Comp
+L Connector:AVR-ISP-6 J?
+U 1 1 60C86912
+P 6450 1800
+F 0 "J?" H 6120 1804 50  0000 R CNN
+F 1 "AVR-ISP-6" H 6120 1895 50  0000 R CNN
+F 2 "" V 6200 1850 50  0001 C CNN
+F 3 " ~" H 5175 1250 50  0001 C CNN
+	1    6450 1800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5400 3250 5950 3250
+Wire Wire Line
+	5900 3050 5400 3050
+Wire Wire Line
+	6050 2000 5900 2000
+Wire Wire Line
+	5900 3050 5900 2000
+Wire Wire Line
+	6550 1350 5800 1350
+Wire Wire Line
+	5800 1000 5800 1350
+Connection ~ 6550 1350
+Wire Wire Line
+	7250 1350 7250 3000
+Connection ~ 7250 3000
+Wire Wire Line
+	7250 3600 7250 5350
+Wire Wire Line
+	4800 5350 7250 5350
+Connection ~ 7250 3600
+Wire Wire Line
+	6950 2800 6950 3000
+Connection ~ 6950 3000
+Wire Wire Line
+	7250 3000 7450 3000
+Wire Wire Line
+	6950 3000 6800 3000
+Wire Wire Line
+	6950 2350 6950 2450
+Wire Wire Line
+	5850 2300 6100 2300
+Wire Wire Line
+	6100 2300 6100 2450
+Wire Wire Line
+	6100 2450 6550 2450
+Connection ~ 6950 2450
+Wire Wire Line
+	6950 2450 6950 2500
+Wire Wire Line
+	6550 2450 6550 2300
+Connection ~ 6550 2450
+Wire Wire Line
+	6550 2450 6950 2450
+$Comp
+L Device:R R?
+U 1 1 60C1B6B7
+P 5850 3900
+F 0 "R?" H 5920 3946 50  0000 L CNN
+F 1 "R" H 5920 3855 50  0000 L CNN
+F 2 "" V 5780 3900 50  0001 C CNN
+F 3 "~" H 5850 3900 50  0001 C CNN
+	1    5850 3900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 4150 5850 4150
+Wire Wire Line
+	5850 4150 5850 4050
+Wire Wire Line
+	5850 3750 5850 2300
+$Comp
+L Device:LED D?
+U 1 1 60D31404
+P 7600 5200
+F 0 "D?" V 7639 5082 50  0000 R CNN
+F 1 "LED" V 7548 5082 50  0000 R CNN
+F 2 "" H 7600 5200 50  0001 C CNN
+F 3 "~" H 7600 5200 50  0001 C CNN
+	1    7600 5200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7600 5350 7250 5350
+Connection ~ 7250 5350
+$EndSCHEMATC
