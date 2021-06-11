@@ -1,4 +1,4 @@
-19089045408314004
+19093915635676955
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2274,6 +2274,27 @@ speaker CUI
 0
 2
 2
+CD74HC14
+Texas_Instruments-CD74HC14-Level_A
+
+
+0
+14
+14
+CD74HC14
+Texas_Instruments-CD74HC14-Level_B
+
+
+0
+14
+14
+CD74HC14
+Texas_Instruments-CD74HC14-Level_C
+
+
+0
+14
+14
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -58755,7 +58776,7 @@ Nokia_5110-3310_LCD
 
 
 0
-15
+13
 9
 Nokia5110
 Nokia_5110-3310_LCD-B.Paste
