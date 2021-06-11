@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name Nokia5110)(type KiCad)(uri C:/kicad-libs/footprints/Nokia_5110-3310_LCD.pretty)(options "")(descr ""))
+  (lib (name Nokia5110LCD)(type KiCad)(uri C:/kicad-libs/footprints/LCD_Connectors.pretty)(options "")(descr ""))
+)

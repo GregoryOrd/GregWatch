@@ -101,18 +101,6 @@ Wire Wire Line
 Wire Wire Line
 	7250 3100 6950 3100
 Wire Wire Line
-	5500 1000 5500 4950
-Wire Wire Line
-	5550 1000 5550 1800
-Wire Wire Line
-	5600 1000 5600 1900
-Wire Wire Line
-	5650 1000 5650 2750
-Wire Wire Line
-	5700 1000 5700 2650
-Wire Wire Line
-	5750 1000 5750 2850
-Wire Wire Line
 	5850 2300 4900 2300
 Wire Wire Line
 	4900 2300 4900 2350
@@ -130,8 +118,6 @@ Wire Wire Line
 	6050 1800 5550 1800
 Connection ~ 5550 1800
 Wire Wire Line
-	5550 1800 5550 3150
-Wire Wire Line
 	6050 1700 5850 1700
 Connection ~ 5850 1700
 Wire Wire Line
@@ -147,8 +133,6 @@ F 3 "~" H 6950 2650 50  0001 C CNN
 	1    6950 2650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5850 1000 5850 1700
 Wire Wire Line
 	6550 1400 6550 1350
 $Comp
@@ -181,10 +165,6 @@ Wire Wire Line
 	5900 3050 5400 3050
 Wire Wire Line
 	6050 2000 5900 2000
-Wire Wire Line
-	6550 1350 5800 1350
-Wire Wire Line
-	5800 1000 5800 1350
 Connection ~ 6550 1350
 Wire Wire Line
 	7250 1350 7250 3100
@@ -237,8 +217,6 @@ F 3 "~" H 6700 5200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6700 5350 7250 5350
-Text Notes 5250 900  0    50   ~ 0
-SPI Lines to the Screen\n
 $Comp
 L Device:LED D?
 U 1 1 60D4A58F
@@ -328,4 +306,58 @@ Wire Wire Line
 	6350 2650 6600 2650
 Wire Wire Line
 	6600 2650 6600 2700
+Wire Wire Line
+	5550 1800 5550 3150
+Wire Wire Line
+	5500 2000 5500 4950
+Wire Wire Line
+	5500 2000 3400 2000
+Wire Wire Line
+	5550 1800 4150 1800
+Wire Wire Line
+	4150 1800 4150 1950
+Wire Wire Line
+	4150 1950 3400 1950
+Wire Wire Line
+	5600 1900 3400 1900
+Wire Wire Line
+	5650 1750 4100 1750
+Wire Wire Line
+	4100 1750 4100 1850
+Wire Wire Line
+	4100 1850 3400 1850
+Wire Wire Line
+	5650 1750 5650 2750
+Wire Wire Line
+	5700 1700 4050 1700
+Wire Wire Line
+	4050 1700 4050 1800
+Wire Wire Line
+	4050 1800 3400 1800
+Wire Wire Line
+	5700 1700 5700 2650
+Wire Wire Line
+	5750 1650 4000 1650
+Wire Wire Line
+	4000 1650 4000 1750
+Wire Wire Line
+	4000 1750 3400 1750
+Wire Wire Line
+	5750 1650 5750 2850
+Wire Wire Line
+	3950 1350 3950 1700
+Wire Wire Line
+	3950 1700 3400 1700
+Wire Wire Line
+	5850 1600 3900 1600
+Wire Wire Line
+	3900 1600 3900 1650
+Wire Wire Line
+	5850 1600 5850 1700
+Wire Wire Line
+	3950 1350 6550 1350
+Wire Wire Line
+	3900 1650 3400 1650
+Text Notes 2750 1500 0    50   ~ 0
+SPI Lines to the Screen\n
 $EndSCHEMATC
