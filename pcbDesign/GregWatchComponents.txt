@@ -9,35 +9,41 @@ Capacitors
 - Going for MLCC (Multi-layer Ceramic Capacitors)
 - 50V rating on the 0.1uF and 22pF capacitors, 16V rating on the 10uF capacitors
 
-0.1uF Capacitors - 08055C104KAT2A (AVX Corporation) - 13cents per on Digikey
-22pF Capacitors - 08055C220JAT2A (AVX Corporation) - 35cents per on Digikey
-10uF Capacitors - CL21B106KOQNNNG (Samsung Electro-Mechanics) - 38cents per on Digikey
+0.1uF Capacitors (5) - 08055C104KAT2A (AVX Corporation) - 13cents per on Digikey
+22pF Capacitors (2) - 08055C220JAT2A (AVX Corporation) - 35cents per on Digikey
+10uF Capacitors (1) - CL21B106KOQNNNG (Samsung Electro-Mechanics) - 38cents per on Digikey
 
 
 
 Resistors
 --------------------
-100 Ohm Resistors - ERJ-P06J101V (Panasonic Electronic Components) - 17cents per on Digikey
-10 kOhm Resistors - ERA-6ARB103V (Panasonic Electronic Components) - 85cents per on Digikey
+100 Ohm Resistors (6) - ERJ-P06J101V (Panasonic Electronic Components) - 17cents per on Digikey
+10 kOhm Resistors (9) - ERA-6ARB103V (Panasonic Electronic Components) - 85cents per on Digikey
 
 
 
 Diodes
 --------------------
-LEDs - LSM0805543V (Visual Communications Company - VCC) - 77cents per on Digikey
+LEDs (6) - LSM0805543V (Visual Communications Company - VCC) - 77cents per on Digikey
 
 
 Crystals
 ---------
-16MHz Crystal - 403C11E16M00000 (CTS-Frequency Controls) - 97cents per on Digikey
+16MHz Crystal (1) - 403C11E16M00000 (CTS-Frequency Controls) - 97cents per on Digikey
 
 
 Buttons
 ---------
-Push Buttons - EVQ-PUJ02K (Panasonic Electronic Components) - 75cents on Digikey
+Push Buttons (4) - EVQ-PUJ02K (Panasonic Electronic Components) - 75cents on Digikey
 
 
 
 Integrated Circuits
 --------------------
-Inverter Schmidt Trigger - CD74HC14PW (Texas Instruments) - 90cents on Digikey
+Inverter Schmidt Trigger (1) - CD74HC14PW (Texas Instruments) - 90cents on Digikey
+ATmega328p-AU (1)
+
+
+LCD Screen
+------------
+Nokia 5110 (1)
