@@ -1,4 +1,11 @@
-19093915635676955
+19095539485509317
+AVR-ISP-6
+AVR-ISP-6
+6-lead dip package, row spacing 7.62 mm (300 mils)
+dil dip 2.54 300
+0
+6
+6
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -58776,7 +58783,7 @@ Nokia_5110-3310_LCD
 
 
 0
-13
+15
 9
 Nokia5110
 Nokia_5110-3310_LCD-B.Paste
