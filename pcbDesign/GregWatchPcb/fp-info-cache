@@ -1,4 +1,11 @@
-19089045716946641
+19093916185545913
+AVR-ISP-6
+AVR-ISP-6
+6-lead dip package, row spacing 7.62 mm (300 mils)
+dil dip 2.54 300
+0
+6
+6
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2274,6 +2281,27 @@ speaker CUI
 0
 2
 2
+CD74HC14
+Texas_Instruments-CD74HC14-Level_A
+
+
+0
+14
+14
+CD74HC14
+Texas_Instruments-CD74HC14-Level_B
+
+
+0
+14
+14
+CD74HC14
+Texas_Instruments-CD74HC14-Level_C
+
+
+0
+14
+14
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -58778,13 +58806,6 @@ Nokia_5110-3310_LCD-F.Paste-B.Paste
 0
 15
 9
-Nokia5110LCD
-FPA-WZA201-08-LF
-
-
-0
-10
-8
 OptoDevice
 ADNS-9800
 Laser Gaming Sensor ADNS-9800
