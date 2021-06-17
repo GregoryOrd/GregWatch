@@ -60,7 +60,7 @@ F 1 "16M" V 6145 4181 50  0000 L CNN
 F 2 "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering" H 6100 4050 50  0001 C CNN
 F 3 "~" H 6100 4050 50  0001 C CNN
 	1    6100 4050
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 Wire Wire Line
 	5350 3950 5900 3950
@@ -919,6 +919,4 @@ Connection ~ 1550 4200
 Wire Wire Line
 	2000 4200 1700 4200
 Connection ~ 1700 4200
-Connection ~ 1000 4200
-Connection ~ 2000 4200
 $EndSCHEMATC
