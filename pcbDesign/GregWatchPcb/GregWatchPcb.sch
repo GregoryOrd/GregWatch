@@ -662,7 +662,7 @@ $EndComp
 Wire Wire Line
 	9800 1650 10250 1650
 Wire Wire Line
-	7700 1650 8950 1650
+	7700 1650 7900 1650
 Wire Wire Line
 	8950 1650 9400 1650
 Connection ~ 8950 1650
@@ -919,4 +919,35 @@ F 3 "~" H 6100 4050 50  0001 C CNN
 	1    6100 4050
 	0    -1   -1   0   
 $EndComp
+$Comp
+L Connector:TestPoint TP1
+U 1 1 60DF538A
+P 6850 1650
+F 0 "TP1" V 7045 1722 50  0000 C CNN
+F 1 "TestPoint" V 6954 1722 50  0000 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 7050 1650 50  0001 C CNN
+F 3 "~" H 7050 1650 50  0001 C CNN
+	1    6850 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 60E0B447
+P 7900 1500
+F 0 "TP2" H 7958 1618 50  0000 L CNN
+F 1 "TestPoint" H 7958 1527 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 8100 1500 50  0001 C CNN
+F 3 "~" H 8100 1500 50  0001 C CNN
+	1    7900 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1650 7200 1650
+Wire Wire Line
+	7900 1500 7900 1650
+Wire Wire Line
+	7900 1650 7700 1650
+Connection ~ 7900 1650
+Wire Wire Line
+	7900 1650 8950 1650
 $EndSCHEMATC
