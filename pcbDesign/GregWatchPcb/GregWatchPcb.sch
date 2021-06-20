@@ -443,30 +443,6 @@ Wire Wire Line
 Connection ~ 1550 4750
 Wire Wire Line
 	1550 4750 1700 4750
-$Comp
-L power:+5V #PWR02
-U 1 1 60CD6564
-P 7700 1400
-F 0 "#PWR02" H 7700 1250 50  0001 C CNN
-F 1 "+5V" H 7715 1573 50  0000 C CNN
-F 2 "" H 7700 1400 50  0001 C CNN
-F 3 "" H 7700 1400 50  0001 C CNN
-	1    7700 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR01
-U 1 1 60CD7132
-P 7200 1400
-F 0 "#PWR01" H 7200 1150 50  0001 C CNN
-F 1 "GND" V 7205 1272 50  0000 R CNN
-F 2 "" H 7200 1400 50  0001 C CNN
-F 3 "" H 7200 1400 50  0001 C CNN
-	1    7200 1400
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7200 1400 7200 1650
 Connection ~ 7200 1950
 Wire Wire Line
 	6500 3050 7700 3050
@@ -478,11 +454,9 @@ Connection ~ 7200 1650
 Wire Wire Line
 	7600 1650 7700 1650
 Wire Wire Line
-	7200 1950 7200 2900
+	7200 1950 7200 2200
 Wire Wire Line
-	7700 1650 7700 1400
-Wire Wire Line
-	7700 3050 7700 1900
+	7700 3050 7700 2200
 Connection ~ 7700 1650
 $Comp
 L 74xx:74HC14 U3
@@ -945,9 +919,28 @@ Wire Wire Line
 	6850 1650 7200 1650
 Wire Wire Line
 	7900 1500 7900 1650
-Wire Wire Line
-	7900 1650 7700 1650
 Connection ~ 7900 1650
 Wire Wire Line
 	7900 1650 8950 1650
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 60D03256
+P 7400 2200
+F 0 "BT1" V 7145 2250 50  0000 C CNN
+F 1 "Battery_Cell" V 7236 2250 50  0000 C CNN
+F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" V 7400 2260 50  0001 C CNN
+F 3 "~" V 7400 2260 50  0001 C CNN
+	1    7400 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7600 2200 7700 2200
+Connection ~ 7700 2200
+Wire Wire Line
+	7700 2200 7700 1900
+Wire Wire Line
+	7300 2200 7200 2200
+Connection ~ 7200 2200
+Wire Wire Line
+	7200 2200 7200 2900
 $EndSCHEMATC
