@@ -1,10 +1,14 @@
 CC = gcc
 CFLAGS = -shared -finstrument-functions -fPIC
 
-HARDWARE_SIM=../../lib/hardwareSim.so
-TIME_SIM=../../lib/timeSim.so
+LIB_DIR=../../lib
+HARDWARE_SIM=$(LIB_DIR)/hardwareSim.so
+TIME_SIM=$(LIB_DIR)/timeSim.so
 
-simulators: $(HARDWARE_SIM) $(TIME_SIM)
+simulators: $(LIB_DIR) $(HARDWARE_SIM) $(TIME_SIM)
+
+$(LIB_DIR):
+	mkdir -p $@
 
 $(HARDWARE_SIM): hardwareSim.c hardwareSim.h
 	$(CC) $(CFLAGS) $< -o $@
