@@ -1,3 +1,8 @@
 EXTENDED = 0xFF
 HIGH = 0xD9
+
+Using a 16 MHz External Crystal with 4.1ms startup time:
 LOW = 0xEF
+
+Using the 8 MHz Interanl Crystal with 65ms startup time:
+Low = 0xE2
