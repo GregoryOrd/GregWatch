@@ -22,7 +22,7 @@ void setupTimer()
 {
    TCCR0A = 0b00000010;
    TCCR0B = 0b00000101;
-   OCR0A = 155; /* (F_CPU / 1024 / 100) - 1 => 10ms */
+   OCR0A = 78; /* (F_CPU / 1024 / 100) => 10ms */
    TIMSK0 = 0b00000010;
 
    sei();

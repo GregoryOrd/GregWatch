@@ -4,7 +4,7 @@ executableName:GregWatchSPI.elf
 buildStartingDirectory:src
 testFrameworkLibrary:/usr/lib/GregTest.so
 
-compilerOption:-DF_CPU=16000000UL
+compilerOption:-DF_CPU=8000000UL
 compilerOption:-Og
 compilerOption:-fno-common
 
