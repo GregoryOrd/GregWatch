@@ -2,6 +2,8 @@
 
 uint8_t DDRB = 0x00;
 uint8_t PORTB = 0x00;
+uint8_t DDRD = 0x00;
+uint8_t PORTD = 0x00;
 uint8_t DDRC = 0x00;
 uint8_t PORTC = 0x00;
 uint8_t SPCR = 0x00;

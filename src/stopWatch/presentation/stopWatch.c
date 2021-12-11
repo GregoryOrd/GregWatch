@@ -1,5 +1,6 @@
 #include "stopWatch.h"
 
+#include "../backlight/backlight.h"
 #include "../buttons/buttons.h"
 #include "../display/communicationProtocol/spi.h"
 #include "../display/deviceController/nokia5110Controller.h"
@@ -25,6 +26,8 @@ void initStopWatchDisplay()
    setMinutesDisplay(0);
    setSecondsDisplay(0);
    displayLetter(COLON_POSITION, ':');
+   initBacklight();
+   setBacklightState(false);
 }
 
 void disableStopWatch()

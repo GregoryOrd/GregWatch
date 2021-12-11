@@ -6,13 +6,13 @@ void initSpiInterface()
    SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR0);
 }
 
-void enableSlave() { PORTB &= ~(1 << SS); }
+void enableSlave() { SPI_PORT &= ~(1 << SS); }
 
-void disableSlave() { PORTB |= (1 << SS); }
+void disableSlave() { SPI_PORT |= (1 << SS); }
 
-void setResetPinLow() { PORTB &= ~(1 << RST); }
+void setResetPinLow() { SPI_PORT &= ~(1 << RST); }
 
-void setResetPinHigh() { PORTB |= (1 << RST); }
+void setResetPinHigh() { SPI_PORT |= (1 << RST); }
 
 void resetSlave()
 {
@@ -23,13 +23,13 @@ void resetSlave()
 
 void transmitCommand(unsigned char data)
 {
-   PORTB &= ~(1 << DC);
+   SPI_PORT &= ~(1 << DC);
    transmitByte(data);
 }
 
 void transmitData(unsigned char data)
 {
-   PORTB |= (1 << DC);
+   SPI_PORT |= (1 << DC);
    transmitByte(data);
 }
 
