@@ -2,7 +2,6 @@
 
 #include "../../../deviceDrivers/display/communicationProtocol/spi.h"
 #include "../../../deviceDrivers/display/deviceController/nokia5110Controller.h"
-#include "../../../timer/timeState.h"
 #include "../../../timer/timer.h"
 #include "../../stopWatch.h"
 #include "stopWatchTestHelper.h"
@@ -79,14 +78,6 @@ void willConvertIntegerToAsciiChar()
    }
 }
 
-void willIncrementTimeStateAndUpdateDisplay()
-{
-   G_EXPECT_CALL(incrementTimeStateByOneSecond);
-   G_EXPECT_CALL(updateDisplayWithCurrentState);
-
-   incrementStopWatchOneSecondAndResetTimerFlag();
-}
-
 void willQueryCurrentStateWhenUpdatingDisplay()
 {
    G_EXPECT_CALL(minutes);
@@ -95,9 +86,9 @@ void willQueryCurrentStateWhenUpdatingDisplay()
    updateDisplayWithCurrentState();
 }
 
-void willResetTimerFlag()
+void willresetTimer()
 {
-   G_EXPECT_CALL(resetTimerFlag);
+   G_EXPECT_CALL(resetTimer);
 
-   incrementStopWatchOneSecondAndResetTimerFlag();
+   resetStopWatchDisplay();
 }

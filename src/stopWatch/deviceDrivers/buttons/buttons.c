@@ -1,6 +1,6 @@
 #include "buttons.h"
 
-#include "../../timer/timeState.h"
+#include "../../timer/timer.h"
 
 //////////////////////////////////////////////////////////////////////
 //              Private Data and Function Prototypes                //

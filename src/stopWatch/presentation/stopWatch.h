@@ -20,7 +20,6 @@ extern "C"
    void setSecondsDisplay(int seconds);
    char integerToAsciiChar(int integer);
    void runThroughMinutes();
-   void incrementStopWatchOneSecondAndResetTimerFlag();
    void updateDisplayWithCurrentState();
 
 #ifdef __cplusplus

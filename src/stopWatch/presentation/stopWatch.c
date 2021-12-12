@@ -5,8 +5,6 @@
 #include "../deviceDrivers/display/communicationProtocol/spi.h"
 #include "../deviceDrivers/display/deviceController/nokia5110Controller.h"
 #include "../deviceDrivers/lightSensor/lightSensor.h"
-#include "../timer/timeDefs.h"
-#include "../timer/timeState.h"
 #include "../timer/timer.h"
 
 #ifdef TEST
@@ -15,7 +13,6 @@
 #include <avr/interrupt.h>
 #endif
 
-static bool stopWatchDoneFlag = false;
 extern uint8_t lightSensorValue;
 
 void initStopWatch()
@@ -46,11 +43,7 @@ void disableStopWatch()
    disableSlave();
 }
 
-void resetStopWatchDisplay()
-{
-   setMinutesDisplay(0);
-   setSecondsDisplay(0);
-}
+void resetStopWatchDisplay() { resetTimer(); }
 
 void setMinutesDisplay(int minutes)
 {
@@ -76,13 +69,6 @@ char integerToAsciiChar(int integer)
    return zero + integer;
 }
 
-void incrementStopWatchOneSecondAndResetTimerFlag()
-{
-   incrementTimeStateByOneSecond();
-   updateDisplayWithCurrentState();
-   resetTimerFlag();
-}
-
 void updateDisplayWithCurrentState()
 {
    setMinutesDisplay(minutes());
@@ -91,15 +77,13 @@ void updateDisplayWithCurrentState()
 
 void runThroughMinutes()
 {
-   while (!stopWatchDoneFlag)
+   while (true)
    {
-      if (oneSecondElapsed())
-      {
-         incrementStopWatchOneSecondAndResetTimerFlag();
-      }
+      updateDisplayWithCurrentState();
+
       if (minutes() >= 60)
       {
-         stopWatchDoneFlag = true;
+         break;
       }
 
       if (lightSensorValue < 5)
