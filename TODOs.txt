@@ -1,12 +1,16 @@
-2) Update the copy.sh and load.sh scripts so that we don't copy the lib directory over to the raspberry pi.
+1) Create bit manipulation helper functions
+2) Update schematic
+
+
+3) Update the copy.sh and load.sh scripts so that we don't copy the lib directory over to the raspberry pi.
 	- The .so files in here need to be built on the raspberry pi because it is not x86
-2a) Update scripting so we can update everything needed in the raspberry pi 
+3a) Update scripting so we can update everything needed in the raspberry pi 
 	build environment in one script
 		- Update the hardware sim libraries
 		- Update the GregTest/GregBuild libraries
 		- Update all of the GregWatch code and dependencies
 
-3) Add randoms to GregCToolkit/This project
+4) Add randoms to GregCToolkit/This project
 	- Only problem with GregCToolkit is that if we bring it in as a submodule,
 	we have to build the entire thing until GregBuild is updated to add control 
 	for which parts of the toolkit we want to bring into this project.
