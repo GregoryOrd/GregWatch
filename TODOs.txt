@@ -3,6 +3,7 @@
 3) Add unknown registers, etc. to the hardware simulation library
 4) Add buzzer when buttons pushed
 5) Update schematic for buzzer
+6) Move timer folder under device drivers
 
 3) Update the copy.sh and load.sh scripts so that we don't copy the lib directory over to the raspberry pi.
 	- The .so files in here need to be built on the raspberry pi because it is not x86
