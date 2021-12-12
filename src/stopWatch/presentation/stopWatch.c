@@ -4,11 +4,13 @@
 #include "../buttons/buttons.h"
 #include "../display/communicationProtocol/spi.h"
 #include "../display/deviceController/nokia5110Controller.h"
+#include "../lightSensor/lightSensor.h"
 #include "../timer/timeDefs.h"
 #include "../timer/timeState.h"
 #include "../timer/timer.h"
 
 static bool stopWatchDoneFlag = false;
+extern uint8_t lightSensorValue;
 
 void initStopWatch()
 {
@@ -18,6 +20,7 @@ void initStopWatch()
    enableSlave();
    initNokia5110();
    initStopWatchDisplay();
+   startADCLightSensor();
 }
 
 void initStopWatchDisplay()
@@ -90,6 +93,15 @@ void runThroughMinutes()
       if (minutes() >= 60)
       {
          stopWatchDoneFlag = true;
+      }
+
+      if (lightSensorValue < 5)
+      {
+         setBacklightState(true);
+      }
+      else
+      {
+         setBacklightState(false);
       }
    }
 }
