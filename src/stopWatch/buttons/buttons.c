@@ -36,18 +36,12 @@ uint8_t perButtonInterruptServiceRoutine(uint8_t* const previousState, uint8_t b
 ISR(BUTTONS_INTERRUPT_VECTOR)
 {
    uint8_t triggeringButtonFound = 0;
-   triggeringButtonFound |= perButtonInterruptServiceRoutine(previousButtonStates, BUTTON_1_IN);
-
-   if (!triggeringButtonFound)
+   for (int buttonNumber = 0; buttonNumber < NUM_BUTTONS; buttonNumber++)
    {
-      triggeringButtonFound |= perButtonInterruptServiceRoutine(previousButtonStates + 1, BUTTON_2_IN);
-      if (!triggeringButtonFound)
+      triggeringButtonFound |= perButtonInterruptServiceRoutine(previousButtonStates + buttonNumber, BUTTON_PINS_STARTING_OFFSET + buttonNumber);
+      if (triggeringButtonFound)
       {
-         triggeringButtonFound |= perButtonInterruptServiceRoutine(previousButtonStates + 2, BUTTON_3_IN);
-         if (!triggeringButtonFound)
-         {
-            triggeringButtonFound |= perButtonInterruptServiceRoutine(previousButtonStates + 3, BUTTON_4_IN);
-         }
+         break;
       }
    }
 }

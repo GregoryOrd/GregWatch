@@ -17,6 +17,9 @@
 #define BUTTONS_PIN_CHANGE_MASK_REGISTER      PCMSK2
 #define BUTTONS_INTERRUPT_VECTOR              PCINT2_vect
 
+#define NUM_BUTTONS                 4
+#define BUTTON_PINS_STARTING_OFFSET 2
+
 #define BUTTON_1    PORTD2
 #define BUTTON_1_IN PIND2
 
