@@ -10,19 +10,20 @@ it to ground.
 */
 
 #ifdef TEST
-#include "../../sim/hardwareSim.h"
+#include "../../../sim/hardwareSim.h"
 #else
-#include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/io.h>
 #endif
 
 #define ADC_INTERRUPT_VECTOR ADC_vect
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-void startADCLightSensor();
+   void startADCLightSensor();
 
 #ifdef __cplusplus
 }

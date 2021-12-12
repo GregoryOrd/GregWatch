@@ -1,7 +1,7 @@
 #include <GregTest.h>
 
-#include "../../../display/communicationProtocol/spi.h"
-#include "../../../display/deviceController/nokia5110Controller.h"
+#include "../../../deviceDrivers/display/communicationProtocol/spi.h"
+#include "../../../deviceDrivers/display/deviceController/nokia5110Controller.h"
 #include "../../../timer/timeState.h"
 #include "../../../timer/timer.h"
 #include "../../stopWatch.h"

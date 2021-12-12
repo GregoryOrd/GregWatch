@@ -2,8 +2,8 @@
 #define SPI_H
 
 #ifdef TEST
-#include "../../../sim/hardwareSim.h"
-#include "../../../sim/timeSim.h"
+#include "../../../../sim/hardwareSim.h"
+#include "../../../../sim/timeSim.h"
 #else
 #include <avr/io.h>
 #include <util/delay.h>
