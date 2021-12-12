@@ -9,11 +9,18 @@
 #include "../timer/timeState.h"
 #include "../timer/timer.h"
 
+#ifdef TEST
+#include "../../sim/hardwareSim.h"
+#else
+#include <avr/interrupt.h>
+#endif
+
 static bool stopWatchDoneFlag = false;
 extern uint8_t lightSensorValue;
 
 void initStopWatch()
 {
+   sei();
    initButtons();
    setupTimer();
    initSpiInterface();

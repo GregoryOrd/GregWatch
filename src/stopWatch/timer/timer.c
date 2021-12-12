@@ -24,8 +24,6 @@ void setupTimer()
    TCCR0B = 0b00000101;
    OCR0A = 78; /* (F_CPU / 1024 / 100) => 10ms */
    TIMSK0 = 0b00000010;
-
-   sei();
 }
 
 bool oneSecondElapsed() { return flag == DELAY_INTERRUPTS; }
