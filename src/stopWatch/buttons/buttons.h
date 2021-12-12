@@ -1,28 +1,40 @@
 #ifndef BUTTONS_H
 #define BUTTONS_H
 
-#include <stdint.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #ifdef TEST
 #include "../../sim/hardwareSim.h"
 #else
-#include <avr/io.h>
 #include <avr/interrupt.h>
+#include <avr/io.h>
 #endif
 
-#define PAUSE_BUTTON_INTERRUPT_VECTOR               INT0_vect
-#define PAUSE_BUTTON_INTERRUPT_CONTROL_REGISTER     EICRA
-#define PAUSE_BUTTON_INTERRUPT_MASK_REGISTER        EIMSK
-#define PAUSE_BUTTON_INTERRUPT_ENABLE               INT0
-#define PAUSE_BUTTON_INTERRUPT_SENSE_CONTROL_1      ISC01
-#define PAUSE_BUTTON_INTERRUPT_SENSE_CONTROL_0      ISC00
+#define BUTTONS_DDR                           DDRD
+#define BUTTONS_INPUT_REGISTER                PIND
+#define BUTTONS_PIN_CHANGE_INTERRUPT_REGISTER PCICR
+#define BUTTONS_PIN_CHANGE_MASK_REGISTER      PCMSK2
+#define BUTTONS_INTERRUPT_VECTOR              PCINT2_vect
+
+#define BUTTON_1    PORTD2
+#define BUTTON_1_IN PIND2
+
+#define BUTTON_2    PORTD3
+#define BUTTON_2_IN PIND3
+
+#define BUTTON_3    PORTD4
+#define BUTTON_3_IN PIND4
+
+#define BUTTON_4    PORTD5
+#define BUTTON_4_IN PIND5
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-void setupPauseButtonInterrupt();
+   void initButtons();
 
 #ifdef __cplusplus
 }

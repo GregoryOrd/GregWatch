@@ -14,7 +14,7 @@ extern uint8_t lightSensorValue;
 
 void initStopWatch()
 {
-   setupPauseButtonInterrupt();
+   initButtons();
    setupTimer();
    initSpiInterface();
    enableSlave();
@@ -29,8 +29,8 @@ void initStopWatchDisplay()
    setMinutesDisplay(0);
    setSecondsDisplay(0);
    displayLetter(COLON_POSITION, ':');
-   initBacklight();
-   setBacklightState(false);
+   // initBacklight();
+   // setBacklightState(false);
 }
 
 void disableStopWatch()
@@ -95,13 +95,13 @@ void runThroughMinutes()
          stopWatchDoneFlag = true;
       }
 
-      if (lightSensorValue < 5)
+      /*if (lightSensorValue < 5)
       {
          setBacklightState(true);
       }
       else
       {
          setBacklightState(false);
-      }
+      }*/
    }
 }
