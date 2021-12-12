@@ -12,14 +12,15 @@
 // BACKLIGHT PIN DEFINES
 #define BACKLIGHT_DDR  DDRD
 #define BACKLIGHT_PORT PORTD
-#define BACKLIGHT_PIN  PORTD4
+#define BACKLIGHT_PIN  PORTD6
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-void initBacklight();
-void setBacklightState(bool backlightOn);
+   void initBacklight();
+   void setBacklightState(bool backlightOn);
 
 #ifdef __cplusplus
 }
